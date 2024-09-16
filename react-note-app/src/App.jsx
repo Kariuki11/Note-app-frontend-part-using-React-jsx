@@ -6,9 +6,8 @@ import NoteCardContainer from './components/NoteCardContainer'
 function App() {
   return (
     <>
-    <NavBar />
-    <Filter/>
-    <NoteCardContainer />
+    {/* <NavBar /> */}
+  
     </>
   )
 }
