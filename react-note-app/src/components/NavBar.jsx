@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import { FaSquarePlus } from "react-icons/fa6";
 
 function NavBar() {
   return (
