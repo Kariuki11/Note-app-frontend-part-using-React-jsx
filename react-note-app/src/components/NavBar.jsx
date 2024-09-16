@@ -6,9 +6,9 @@ function NavBar() {
   return (
     <nav className="navbar bg-body-tertiary py-50" style={{ padding: "20px" }}>
       <div className="container d-flex justify-content-around">
-        <Link className="navbar-brand" to="/">
+        <a className="navbar-brand" href="/">
           <h4 style={{ fontWeight: "bold" }}>Notey</h4>
-        </Link>
+        </a>
         <div className="d-flex">
           <div
             className="input-group input-group-sm"
@@ -27,7 +27,7 @@ function NavBar() {
           {/* <button className="btn btn-outline-primary btn-md" type="button">Add</button> */}
         </div>
 
-        <Link to="/add-notes"  style={{ textDecoration: "none" }}>
+        <a href="/add-notes"  style={{ textDecoration: "none" }}>
           <button
             className="btn btn-outline-primary btn-md"
             type="button"
@@ -35,7 +35,7 @@ function NavBar() {
           >
             <FaSquarePlus /> Add Notes
           </button>
-        </Link>
+        </a>
       </div>
     </nav>
   )
