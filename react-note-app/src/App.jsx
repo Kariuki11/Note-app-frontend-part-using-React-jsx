@@ -1,5 +1,5 @@
 import HomePage from './pages/HomePage'
-import { createBrowserRouter, createRoutesFromElements, RouterProvider } from 'react-router-dom'
+import { Route, createBrowserRouter, createRoutesFromElements, RouterProvider } from 'react-router-dom'
 
 function App() {
 
