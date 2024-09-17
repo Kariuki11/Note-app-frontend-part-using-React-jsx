@@ -1,4 +1,6 @@
 import React from 'react'
+import { BiSolidTrashAlt } from "react-icons/bi";
+import { FiEdit } from "react-icons/fi";
 
 function NoteDetailPage() {
   return (
