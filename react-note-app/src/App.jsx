@@ -4,7 +4,9 @@ import { Route, createBrowserRouter, createRoutesFromElements, RouterProvider } 
 function App() {
 
   const router = createBrowserRouter(createRoutesFromElements(
-    <Route index element={<HomePage />} />
+    <Route>
+      <Route index element={<HomePage />} />
+    </Route>
   ))
 
   return <RouterProvider router={router} />
