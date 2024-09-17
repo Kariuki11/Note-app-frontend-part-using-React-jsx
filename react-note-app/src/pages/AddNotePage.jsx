@@ -1,4 +1,5 @@
 import React from 'react'
+import "./AddNotePage.css"
 
 function AddNotePage() {
   return (
