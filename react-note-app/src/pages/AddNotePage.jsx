@@ -33,6 +33,7 @@ function AddNotePage() {
       <label htmlFor="exampleFormControlTextarea1" className="form-label">
           Note's category
         </label>
+
       <select className="form-select" aria-label="Default select example" style={{height: "40px"}}>
           <option selected>Pick a category</option>
           <option value="1">Business</option>
@@ -40,10 +41,7 @@ function AddNotePage() {
           <option value="3">Important</option>
         </select>
       </div>
-
         
-
-
       <button className="btn btn-primary d-flex justify-content-center" style={{width:"100%"}}>Add Note</button>
     </form>
   )
