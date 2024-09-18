@@ -10,7 +10,7 @@ export default function NoteCard() {
                     <span className="side-stick" style={{backgroundColor: "blue" }}></span>
                     <FaNoteSticky style={{marginLeft: "auto", color: "blue" }}/>
                     <a href="/notes-detail" style={{textDecoration: "none", color: "black"}}>
-                    <Link to="note-detail">
+                    <Link to="note-detail" style={{textDecoration: "none", color:"black"}}>
                     <h5 
                     className="note-title text-truncate w-75 mb-0"
                     data-noteheading="Book a Ticket for Movie"
