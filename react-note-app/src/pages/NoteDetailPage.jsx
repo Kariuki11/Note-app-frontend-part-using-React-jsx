@@ -13,7 +13,7 @@ function NoteDetailPage() {
     <p className="note-date font-12 text-muted me-5">last updated: 11 March 2009</p>
     </span>
     <span className="button-group">
-      <Link>
+      <Link to="/edit-note">
       <button className="btn btn-primary"><FiEdit /><span>Edit</span></button>
       </Link>
       <button className="btn btn-danger"><BiSolidTrashAlt /><span>Delete</span></button>
