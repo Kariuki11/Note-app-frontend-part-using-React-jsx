@@ -4,8 +4,23 @@ import HomePage from './pages/HomePage'
 import { Route, createBrowserRouter, createRoutesFromElements, RouterProvider } from 'react-router-dom'
 import NoteDetailPage from './pages/NoteDetailPage'
 import EditNotePage from './pages/EditNotePage'
+import { useEffect, useState } from 'react'
+import axios from 'axios'
+//import { TbError404Off } from "react-icons/tb"
 
 function App() {
+
+  const [notes, setNotes] = useState([])
+
+  useEffect(() => {
+    axios.get("http://127.0.0.1:8008/notes/")
+    .then(res => {
+      console.log(res.data)
+    })
+    .catch(err => {
+      console.log(err.message)
+    })
+  }, [])
 
   const router = createBrowserRouter(createRoutesFromElements(
     <Route path="/" element={<MainLayout/>}>
