@@ -16,6 +16,7 @@ function App() {
     axios.get("http://127.0.0.1:8008/notes/")
     .then(res => {
       console.log(res.data)
+      setNotes(res.data)
     })
     .catch(err => {
       console.log(err.message)
