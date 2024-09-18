@@ -1,6 +1,7 @@
 import React from 'react'
 import { BiSolidTrashAlt } from "react-icons/bi";
 import { FiEdit } from "react-icons/fi";
+import "./NoteDetailPage.css"
 
 function NoteDetailPage() {
   return (
