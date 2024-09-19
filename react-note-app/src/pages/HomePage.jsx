@@ -2,11 +2,13 @@ import React from 'react'
 import Filter from '../components/Filter'
 import NoteCardContainer from '../components/NoteCardContainer'
 
-export default function HomePage() {
+const HomePage = ({notes}) => {
   return (
     <>
     <Filter/>
-    <NoteCardContainer />
+    <NoteCardContainer notes={notes}/>
     </>
   )
 }
+
+export default HomePage

@@ -1,7 +1,7 @@
 import React from 'react'
 import NoteCard from './NoteCard'
 
-export default function NoteCardContainer() {
+export default function NoteCardContainer({notes}) {
   return (
     <div className="container">
     <div className="note-has-grid row">
