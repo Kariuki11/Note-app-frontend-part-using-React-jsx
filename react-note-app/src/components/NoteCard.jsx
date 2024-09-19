@@ -22,8 +22,7 @@ const NoteCard = ({note}) => {
               {note.title}
             </h5>
           </Link>
-        <p className="note-date font-12 text-muted">Date: {FormatDate(isoDate)}</p>
-        {/* {FormatDate(note.updated)} */}
+        <p className="note-date font-12 text-muted">{FormatDate(note.updated)}</p>
         <div className="note-content">
           <p 
             className="note-inner-content text-muted"
