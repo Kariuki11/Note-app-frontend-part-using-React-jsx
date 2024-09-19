@@ -5,15 +5,9 @@ export default function NoteCardContainer({notes}) {
   return (
     <div className="container">
     <div className="note-has-grid row">
-        <h4>Note Card Container.</h4>
-        <NoteCard />
-        <NoteCard />
-        <NoteCard />
-        <NoteCard />
-        <NoteCard />
-        <NoteCard />
-        <NoteCard />
-        <NoteCard />
+
+      {notes.map(note => <NoteCard key={note.id} note={note} />)}
+
       
     </div>
     </div>

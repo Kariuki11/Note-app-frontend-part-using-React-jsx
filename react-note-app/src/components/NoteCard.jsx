@@ -1,59 +1,148 @@
-import React from 'react'
+import React from 'react';
 import { MdMarkunread } from "react-icons/md";
 import { FaNoteSticky } from "react-icons/fa6";
 import { Link } from 'react-router-dom';
 
-export default function NoteCard() {
+const NoteCard = ({note}) => {
+
+    const body = `${note.body.split(" ").slice(0, 20).join(" ")} ...`
+    const color = note.category == "BUSINESS" ? "blue" : note.category == "PERSONAL" ? "green" : "purple"
+
   return (
     <div className="col-md-4 single-note-item all-category">
-                <div className="card card-body">
-                    <span className="side-stick" style={{backgroundColor: "blue" }}></span>
-                    <FaNoteSticky style={{marginLeft: "auto", color: "blue" }}/>
-                    <a href="/notes-detail" style={{textDecoration: "none", color: "black"}}>
-                    <Link to="note-detail" style={{textDecoration: "none", color:"black"}}>
-                    <h5 
-                    className="note-title text-truncate w-75 mb-0"
-                    data-noteheading="Book a Ticket for Movie"
-                    >
-                        Book a Ticket for Movie{" "}
-                    </h5>
-                    </Link>
-                    </a>
-                    <p className="note-date font-12 text-muted">11 March 2024</p>
-                    <div className="note-content">
-                        <p className="note-inner-content text-muted" data-notecontent="Blandit tempus porttitor aasfs. Integer posuere erat a ante venenatis.">Blandit tempus porttitor aasfs. Integer posuere erat a ante venenatis.</p>
-                    </div>
-                    <div className="d-flex align-items-center">
-                        <a href="/notes-detail">
-                        <span className="mr-1"><MdMarkunread style={{fontSize: "25px", cursor:"pointer", color: "blue" }}/></span>
-                        </a>
-                        
-                        <span className="mr-1"><i className="fa fa-trash remove-note"></i></span>
-                        <div className="ml-auto">
-                            <div className="category-selector btn-group">
-                                <a className="nav-link dropdown-toggle category-dropdown label-group p-0" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="true">
-                                    <div className="category">
-                                        <div className="category-business"></div>
-                                        <div className="category-social"></div>
-                                        <div className="category-important"></div>
-                                        <span className="more-options text-dark"><i className="icon-options-vertical"></i></span>
-                                    </div>
-                                </a>
-                                <div className="dropdown-menu dropdown-menu-right category-menu">
-                                    <a className="note-business badge-group-item badge-business dropdown-item position-relative category-business text-success" href="javascript:void(0);">
-                                        <i className="mdi mdi-checkbox-blank-circle-outline mr-1"></i>Business
-                                    </a>
-                                    <a className="note-social badge-group-item badge-social dropdown-item position-relative category-social text-info" href="javascript:void(0);">
-                                        <i className="mdi mdi-checkbox-blank-circle-outline mr-1"></i> Social
-                                    </a>
-                                    <a className="note-important badge-group-item badge-important dropdown-item position-relative category-important text-danger" href="javascript:void(0);">
-                                        <i className="mdi mdi-checkbox-blank-circle-outline mr-1"></i> Important
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-  )
-}
+      <div className="card card-body">
+        <span className="side-stick" style={{backgroundColor: color}}></span>
+        <FaNoteSticky style={{marginLeft: "auto", color: color }} />
+          <Link to="/note-detail" style={{textDecoration: "none", color: color}}>
+            <h5 
+              className="note-title text-truncate w-75 mb-0"
+              data-noteheading="Book a Ticket for Movie"
+            >
+              {note.title}
+            </h5>
+          </Link>
+        <p className="note-date font-12 text-muted">{note.updated}</p>
+        <div className="note-content">
+          <p 
+            className="note-inner-content text-muted"
+            data-notecontent="Blandit tempus porttitor aasfs. Integer posuere erat a ante venenatis."
+          >
+           {body} 
+          </p>
+        </div>
+        <div className="d-flex align-items-center">
+          <a href="/notes-detail">
+            <span className="d-flex justify-content-around">
+              <a href="/notes-detail">
+                <MdMarkunread
+                  style={{fontSize: "25px", cursor: 'pointer', color: color}}
+                />
+              </a>
+              <small className="text-muted">{note.category}</small>
+            </span>
+          </a>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default NoteCard;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// import React from 'react'
+// import { MdMarkunread } from "react-icons/md";
+// import { FaNoteSticky } from "react-icons/fa6";
+// import { Link } from 'react-router-dom';
+
+// const NoteCard = ({note}) => {
+//   return (
+//     <div className="col-md-4 single-note-item all-category">
+//                 <div className="card card-body">
+//                     <span className="side-stick" style={{backgroundColor: "blue" }}></span>
+//                     <FaNoteSticky style={{marginLeft: "auto", color: "blue" }}/>
+//                     <a href="/notes-detail" style={{textDecoration: "none", color: "black"}}>
+//                     <Link to="note-detail" style={{textDecoration: "none", color:"black"}}>
+//                     <h5 
+//                     className="note-title text-truncate w-75 mb-0"
+//                     data-noteheading="Book a Ticket for Movie"
+//                     >
+//                         {note.title}
+//                     </h5>
+//                     </Link>
+
+//                     </a>
+//                     <p className="note-date font-12 text-muted">11 March 2024</p>
+//                     <div className="note-content">
+//                         <p 
+//                             className="note-inner-content text-muted"
+//                             data-notecontent="Blandit tempus porttitor aasfs. Integer posuere erat a ante venenatis."
+//                             >
+//                                 Blandit tempus porttitor aasfs. Integer posuere erat a ante 
+//                                 venenatis.
+//                         </p>
+//                     </div>
+//                     <div className="d-flex align-items-center">
+
+
+//                         1<a href="/notes-detail">
+//                         <span className="d-flex justify-content-around">
+//                         <a href="/notes-detail">
+//                         <MdMarkunread
+//                         style={{ fontSize: "25px", cursor: 'pointer', color: 'blue' }}
+//                         />
+//                         </a>
+//                         <small className="text-muted">BUSINESS</small>
+//                         </span>
+//                     </div>
+//         </div>
+//     </div>
+//   )
+// }
+
+
+// export default NoteCard
