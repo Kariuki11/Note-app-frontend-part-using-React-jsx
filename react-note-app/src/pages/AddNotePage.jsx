@@ -1,7 +1,12 @@
-import React from 'react'
+import { useState } from 'react'
 import "./AddNotePage.css"
 
-function AddNotePage() {
+const AddNotePage = () => {
+
+  const [title, setTitle] = useState("")
+  const [body, setBody] = useState("")
+  const [category, setCategory] = useState("")
+
   return (
     <form>
       <h5>Add New Note</h5>
@@ -14,6 +19,7 @@ function AddNotePage() {
           className="form-control"
           id="exampleFormControlInput1"
           placeholder="Enter note's title"
+          value={title}
         />
       </div>
 
