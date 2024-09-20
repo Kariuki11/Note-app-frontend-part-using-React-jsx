@@ -28,7 +28,7 @@ function App() {
   }, [])
 
   const addNote = (data) => {
-    axios.post("http://127.0.0:8000", data)
+    axios.post("http://127.0.0.1:8008/notes/", data)
     .then(res => {
       console.log(res.data)
     })
@@ -38,11 +38,11 @@ function App() {
   }
 
 
-
   const router = createBrowserRouter(createRoutesFromElements(
     <Route path="/" element={<MainLayout/>}>
       <Route index element={<HomePage notes={notes} loading={isLoading} />} />
-      <Route path="/add-note" element={<AddNotePage />} />
+      {/* <Route path="/add-note" element={<AddNotePage addNote={addNote} />} /> */}
+      <Route path="/add-note" element={<AddNotePage addNote={addNote} />} />
       <Route path="/edit-note" element={<EditNotePage />} />
       <Route path="/notes/:slug" element={<NoteDetailPage />}/>
     </Route>

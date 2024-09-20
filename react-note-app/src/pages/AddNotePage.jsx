@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import "./AddNotePage.css"
 
-const AddNotePage = () => {
+const AddNotePage = ({addNote}) => {
   const [title, setTitle] = useState("");
   const [body, setBody] = useState("");
   const [category, setCategory] = useState("");
@@ -17,6 +17,7 @@ const AddNotePage = () => {
     if(!title && !body && !category) {
       return;
     }
+    addNote(newNote); // Correctly calls the passed function
     console.log(newNote)
   }
 
