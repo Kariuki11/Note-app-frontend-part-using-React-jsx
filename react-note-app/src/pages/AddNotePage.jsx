@@ -6,7 +6,6 @@ const AddNotePage = () => {
   const [title, setTitle] = useState("")
   const [body, setBody] = useState("")
   const [category, setCategory] = useState("")
-
   return (
     <form>
       <h5>Add New Note</h5>
@@ -20,6 +19,7 @@ const AddNotePage = () => {
           id="exampleFormControlInput1"
           placeholder="Enter note's title"
           value={title}
+          onChange={(e) => setTitle(e.target.value)}
         />
       </div>
 
@@ -32,6 +32,8 @@ const AddNotePage = () => {
           id="exampleFormControlTextarea1"
           rows={4}
           placeholder="Enter note's content"
+          value={body}
+          onChange={(e) => setBody(e.target.value)}
         ></textarea>
       </div>
 
@@ -40,7 +42,13 @@ const AddNotePage = () => {
           Note's category
         </label>
 
-      <select className="form-select" aria-label="Default select example" style={{height: "40px"}}>
+      <select
+        className="form-select"
+        aria-label="Default select example"
+        value={category}
+        style={{height: "40px"}}
+        onChange={(e) => setCategory(e.target.value)}
+      >
           <option selected>Pick a category</option>
           <option value="1">Business</option>
           <option value="2">Personal</option>
