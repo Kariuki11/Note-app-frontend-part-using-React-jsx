@@ -32,7 +32,12 @@ function App() {
     .then(res => {
       console.log(res.data)
     })
+    .catch(err => {
+      console.log(console.log(err.message))
+    })
   }
+
+
 
   const router = createBrowserRouter(createRoutesFromElements(
     <Route path="/" element={<MainLayout/>}>
