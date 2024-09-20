@@ -2,12 +2,18 @@ import { useState } from 'react'
 import "./AddNotePage.css"
 
 const AddNotePage = () => {
+  const [title, setTitle] = useState("");
+  const [body, setBody] = useState("");
+  const [category, setCategory] = useState("");
 
-  const [title, setTitle] = useState("")
-  const [body, setBody] = useState("")
-  const [category, setCategory] = useState("")
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    if(title && body && category)
+      console.log("form submitted")
+  }
+
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       <h5>Add New Note</h5>
       <div className="mb-3">
         <label htmlFor="exampleFormControlInput1" className="form-label">
