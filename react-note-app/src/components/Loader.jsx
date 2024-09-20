@@ -4,7 +4,7 @@ import ClipLoader from "react-spinners/ClipLoader";
 const override = {
     display: "block",
     margin: "0 auto",
-    borderColor: "red",
+    borderColor: "purple",
   };
 
 const Loader = ({loading}) => {
@@ -12,7 +12,7 @@ const Loader = ({loading}) => {
     <ClipLoader
         loading={loading}
         cssOverride={override}
-        size={150}
+        size={350}
         aria-label="Loading Spinner"
         data-testid="loader"
       />
