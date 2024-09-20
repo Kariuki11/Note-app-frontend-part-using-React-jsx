@@ -6,10 +6,18 @@ const AddNotePage = () => {
   const [body, setBody] = useState("");
   const [category, setCategory] = useState("");
 
+  const newNote = {
+    title: title,
+    body: body,
+    category: category
+  }
+
   const handleSubmit = (e) => {
     e.preventDefault()
-    if(title && body && category)
-      console.log("form submitted")
+    if(title && body && category) {
+      return;
+    }
+    console.log(newNote)
   }
 
   return (
@@ -20,7 +28,7 @@ const AddNotePage = () => {
           Title
         </label>
         <input
-          type="email"
+          // type="email"
           className="form-control"
           id="exampleFormControlInput1"
           placeholder="Enter note's title"
