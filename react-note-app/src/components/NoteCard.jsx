@@ -14,7 +14,7 @@ const NoteCard = ({note}) => {
       <div className="card card-body">
         <span className="side-stick" style={{backgroundColor: color}}></span>
         <FaNoteSticky style={{marginLeft: "auto", color: color }} />
-          <Link to="/note-detail" style={{textDecoration: "none", color: color}}>
+          <Link to={`/notes/${note.slug}`} style={{textDecoration: "none", color: color}}>
             <h5 
               className="note-title text-truncate w-75 mb-0"
               data-noteheading="Book a Ticket for Movie"
