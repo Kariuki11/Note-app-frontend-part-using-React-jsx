@@ -1,13 +1,30 @@
-import React from 'react'
+import { useEffect, useState } from 'react'
 import { BiSolidTrashAlt } from "react-icons/bi";
 import { FiEdit } from "react-icons/fi";
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import "./NoteDetailPage.css"
+import axios from "axios"
 
 function NoteDetailPage() {
+
+  const [note, setNote] = useState({})
+
+  const {slug} = useParams()
+
+  useEffect(() => {
+    axios.get(`http://127.0.0.1:8008/notes/${slug}`)
+    .then(res => {
+      setNote(res.data)
+      console.log(res.data)
+    })
+    .catch(err => {
+      console.log(err.message)
+    }, [slug])
+  })
+
   return (
     <div className="note-container">
-    <h3 className="title">REACT PROJECT FOR BEGINNERS</h3>
+    <h3 className="title">Note app Project React- Frontend</h3>
     <span className="d-flex justify-content-center">
     <p className="note-date font-12 text-muted me-5"> created: 11 March 2009</p>
     <p className="note-date font-12 text-muted me-5">last updated: 11 March 2009</p>
