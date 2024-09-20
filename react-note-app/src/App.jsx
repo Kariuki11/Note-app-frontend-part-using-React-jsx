@@ -19,6 +19,7 @@ function App() {
     .then(res => {
       console.log(res.data)
       setNotes(res.data)
+      setIsLoading(false)
     })
     .catch(err => {
       console.log(err.message)
@@ -27,7 +28,7 @@ function App() {
 
   const router = createBrowserRouter(createRoutesFromElements(
     <Route path="/" element={<MainLayout/>}>
-      <Route index element={<HomePage notes={notes} />} />
+      <Route index element={<HomePage notes={notes} loading={isLoading} />} />
       <Route path="/add-note" element={<AddNotePage />} />
       <Route path="/edit-note" element={<EditNotePage />} />
       <Route path="/note-detail" element={<NoteDetailPage />}/>
