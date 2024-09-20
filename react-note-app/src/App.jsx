@@ -11,8 +11,10 @@ import axios from 'axios'
 function App() {
 
   const [notes, setNotes] = useState([])
+  const [isLoading, setIsLoading] = useState(false)
 
   useEffect(() => {
+    setIsLoading(true)
     axios.get("http://127.0.0.1:8008/notes/")
     .then(res => {
       console.log(res.data)
