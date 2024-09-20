@@ -14,7 +14,7 @@ const AddNotePage = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    if(title && body && category) {
+    if(!title && !body && !category) {
       return;
     }
     console.log(newNote)

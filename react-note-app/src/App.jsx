@@ -21,10 +21,18 @@ function App() {
       setNotes(res.data)
       setIsLoading(false)
     })
+
     .catch(err => {
       console.log(err.message)
     })
   }, [])
+
+  const addNote = (data) => {
+    axios.post("http://127.0.0:8000", data)
+    .then(res => {
+      console.log(res.data)
+    })
+  }
 
   const router = createBrowserRouter(createRoutesFromElements(
     <Route path="/" element={<MainLayout/>}>
