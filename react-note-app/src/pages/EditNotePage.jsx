@@ -14,6 +14,9 @@ const EditNotePage = () => {
     axios.get(`http://127.0.0.1:8008/notes/${slug}`)
     .then(res => {
       console.log(res.data)
+      setTitle(res.data.title)
+      setBody(res.data.body)
+      setCategory(res.data.category)
     })
     .catch(err => {
       console.log(err.message)
