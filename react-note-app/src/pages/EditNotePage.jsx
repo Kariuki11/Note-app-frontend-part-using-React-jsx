@@ -13,7 +13,6 @@ const EditNotePage = () => {
   useEffect(() => {
     axios.get(`http://127.0.0.1:8008/notes/${slug}`)
     .then(res => {
-      console.log(res.data)
       setTitle(res.data.title)
       setBody(res.data.body)
       setCategory(res.data.category)
@@ -23,15 +22,26 @@ const EditNotePage = () => {
     })
   }, [slug])
 
+  const updatedNote = {
+    title: title,
+    body: body,
+    category: category
+  }
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    console.log(updatedNote)
+  }
+
+
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       <h5>Update Notes</h5>
       <div className="mb-3">
         <label htmlFor="exampleFormControlInput1" className="form-label">
           Title
         </label>
         <input
-          type="email"
           className="form-control"
           id="exampleFormControlInput1"
           placeholder="Enter note's title"

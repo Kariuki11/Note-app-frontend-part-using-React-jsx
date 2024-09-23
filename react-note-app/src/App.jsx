@@ -41,6 +41,14 @@ function App() {
     })
   }
 
+  const updateNote = (data, slug) => {
+    axios.put(`http://127.0.0.1:8008/${slug}`)
+    .then(res => {
+      setNotes(notes.map(note => note.slug === slug ? res.data : note))
+      toast.success("Note has been updated!")
+    })
+  }
+
 
   const router = createBrowserRouter(createRoutesFromElements(
     <Route path="/" element={<MainLayout/>}>
