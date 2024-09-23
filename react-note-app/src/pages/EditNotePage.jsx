@@ -1,7 +1,25 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import "./AddNotePage.css"
+import { useParams } from 'react-router-dom'
+import axios from 'axios'
 
-function EditNotePage() {
+const EditNotePage = () => {
+
+  const [title, setTitle] = useState("")
+  const [body, setBody] = useState("")
+  const [category, setCategory] = useState("")
+
+  const {slug} = useParams()
+  useEffect(() => {
+    axios.get(`http://127.0.0.1:8008/notes/${slug}`)
+    .then(res => {
+      console.log(res.data)
+    })
+    .catch(err => {
+      console.log(err.message)
+    })
+  })
+
   return (
     <form>
       <h5>Add New Note</h5>
