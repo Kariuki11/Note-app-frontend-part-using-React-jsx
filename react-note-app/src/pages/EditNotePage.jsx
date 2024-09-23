@@ -3,7 +3,7 @@ import "./AddNotePage.css"
 import { useParams } from 'react-router-dom'
 import axios from 'axios'
 
-const EditNotePage = () => {
+const EditNotePage = ({updateNote}) => {
 
   const [title, setTitle] = useState("")
   const [body, setBody] = useState("")
@@ -22,7 +22,7 @@ const EditNotePage = () => {
     })
   }, [slug])
 
-  const updatedNote = {
+  const updateNoteObject = {
     title: title,
     body: body,
     category: category
@@ -30,7 +30,7 @@ const EditNotePage = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    console.log(updatedNote)
+    updateNote(updateNoteObject, slug
   }
 
 

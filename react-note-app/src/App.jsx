@@ -44,9 +44,12 @@ function App() {
   const updateNote = (data, slug) => {
     axios.put(`http://127.0.0.1:8008/${slug}`)
     .then(res => {
-      setNotes(notes.map(note => note.slug === slug ? res.data : note))
-      toast.success("Note has been updated!")
+      console.log(res.data)
+      toast.success("Note Updated Successfully!!")
     })
+
+    .catch(err => console.log(err.message))
+
   }
 
 
@@ -55,7 +58,7 @@ function App() {
       <Route index element={<HomePage notes={notes} loading={isLoading} />} />
       {/* <Route path="/add-note" element={<AddNotePage addNote={addNote} />} /> */}
       <Route path="/add-note" element={<AddNotePage addNote={addNote} />} />
-      <Route path="/edit-note/:slug" element={<EditNotePage />} />
+      <Route path="/edit-note/:slug" element={<EditNotePage updateNote={updateNote} />} />
       <Route path="/notes/:slug" element={<NoteDetailPage />}/>
     </Route>
   ))
