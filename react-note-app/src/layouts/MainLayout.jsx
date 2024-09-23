@@ -10,6 +10,7 @@ function MainLayout() {
   return (
     <>
     <NavBar />
+    <ToastContainer />
     <Outlet />
     </>
   )
