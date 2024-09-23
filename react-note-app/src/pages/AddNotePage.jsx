@@ -1,10 +1,13 @@
 import { useState } from 'react'
 import "./AddNotePage.css"
+import { useNavigate } from 'react-router-dom'
 
 const AddNotePage = ({addNote}) => {
   const [title, setTitle] = useState("");
   const [body, setBody] = useState("");
   const [category, setCategory] = useState("");
+
+  const navigate = useNavigate()
 
   const newNote = {
     title: title,
@@ -18,6 +21,7 @@ const AddNotePage = ({addNote}) => {
       return;
     }
     addNote(newNote); // Correctly calls the passed function
+    navigate("/")
     console.log(newNote)
   }
 
