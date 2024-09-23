@@ -6,6 +6,8 @@ import NoteDetailPage from './pages/NoteDetailPage'
 import EditNotePage from './pages/EditNotePage'
 import { useEffect, useState } from 'react'
 import axios from 'axios'
+import { toast } from 'react-toastify';
+
 //import { TbError404Off } from "react-icons/tb"
 
 function App() {
@@ -31,6 +33,7 @@ function App() {
     axios.post("http://127.0.0.1:8008/notes/", data)
     .then(res => {
       setNotes([...notes, res.data])
+      toast.success("Anew note has been added!");
       console.log(res.data)
     })
     .catch(err => {
@@ -44,7 +47,7 @@ function App() {
       <Route index element={<HomePage notes={notes} loading={isLoading} />} />
       {/* <Route path="/add-note" element={<AddNotePage addNote={addNote} />} /> */}
       <Route path="/add-note" element={<AddNotePage addNote={addNote} />} />
-      <Route path="/edit-note" element={<EditNotePage />} />
+      <Route path="/edit-note/:slug" element={<EditNotePage />} />
       <Route path="/notes/:slug" element={<NoteDetailPage />}/>
     </Route>
   ))

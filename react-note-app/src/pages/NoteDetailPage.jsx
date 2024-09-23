@@ -31,7 +31,7 @@ function NoteDetailPage() {
     <p className="note-date font-12 text-muted me-5">Last Updated: {FormatDate(note.created)}</p>
     </span>
     <span className="button-group">
-      <Link to="/edit-note">
+      <Link to={`/edit-note/${slug}`}>
       <button className="btn btn-primary"><FiEdit /><span>Edit</span></button>
       </Link>
       <button className="btn btn-danger"><BiSolidTrashAlt /><span>Delete</span></button>
