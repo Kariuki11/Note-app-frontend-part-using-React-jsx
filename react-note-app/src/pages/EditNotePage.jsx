@@ -21,7 +21,7 @@ const EditNotePage = () => {
     .catch(err => {
       console.log(err.message)
     })
-  })
+  }, [slug])
 
   return (
     <form>
@@ -36,6 +36,7 @@ const EditNotePage = () => {
           id="exampleFormControlInput1"
           placeholder="Enter note's title"
           value={title}
+          onChange={(e) => setTitle(e.target.value)}
         />
       </div>
 
@@ -49,6 +50,7 @@ const EditNotePage = () => {
           rows={4}
           placeholder="Enter note's content"
           value={body}
+          onChange={(e) => setBody(e.target.value)}
         ></textarea>
       </div>
 
@@ -59,6 +61,7 @@ const EditNotePage = () => {
       <select className="form-select" aria-label="Default select example"
       value={category}
       style={{height: "40px"}}>
+      onChange={(e) => setCategory(e.target.value)}
           <option value="">Pick a category</option>
           <option value="BUSINESS">Business</option>
           <option value="PERSONAL">Personal</option>
