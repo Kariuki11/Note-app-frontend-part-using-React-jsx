@@ -9,4 +9,3 @@ Currently, two official plugins are available:
 
 
 
-2hrs 5 minutes

@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from 'react'
 import "./AddNotePage.css"
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import axios from 'axios'
 
 const EditNotePage = ({updateNote}) => {
-
   const [title, setTitle] = useState("")
   const [body, setBody] = useState("")
   const [category, setCategory] = useState("")
 
-  const {slug} = useParams()
+  const { slug } = useParams()
+  const navigate = useNavigate()
   useEffect(() => {
     axios.get(`http://127.0.0.1:8008/notes/${slug}`)
     .then(res => {
@@ -30,7 +30,9 @@ const EditNotePage = ({updateNote}) => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    updateNote(updateNoteObject, slug
+
+    if(!title && !body && !category) return;
+    updateNote(updateNoteObject, slug)
   }
 
 
