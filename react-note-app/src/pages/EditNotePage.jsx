@@ -33,6 +33,7 @@ const EditNotePage = ({updateNote}) => {
 
     if(!title && !body && !category) return;
     updateNote(updateNoteObject, slug)
+    navigate(`/notes/${slug}`)
   }
 
 
@@ -72,8 +73,9 @@ const EditNotePage = ({updateNote}) => {
         </label>
       <select className="form-select" aria-label="Default select example"
       value={category}
-      style={{height: "40px"}}>
+      style={{height: "40px"}}
       onChange={(e) => setCategory(e.target.value)}
+      >
           <option value="">Pick a category</option>
           <option value="BUSINESS">Business</option>
           <option value="PERSONAL">Personal</option>
