@@ -8,12 +8,15 @@ import { FormatDate } from '../components/FormatDate';
 import Modal from '../components/Modal';
 
 const NoteDetailPage = () => {
-
+  const [note, setNote] = useState({})
+  const {slug} = useParams()
   const [isOpen, setIsOPen] = useState(false)
 
-  const [note, setNote] = useState({})
+  const handleIsOpen = () => {
+    setIsOPen(!isOpen)
+  }
 
-  const {slug} = useParams()
+  
 
   useEffect(() => {
     axios.get(`http://127.0.0.1:8008/notes/${slug}`)
@@ -50,7 +53,7 @@ const NoteDetailPage = () => {
 
     </div>
 
-    <Modal/>
+    {isOpen && <Modal/>}
   </>
   )
 }
