@@ -9,6 +9,8 @@ import Modal from '../components/Modal';
 
 const NoteDetailPage = () => {
 
+  const [isOpen, setIsOPen] = useState(false)
+
   const [note, setNote] = useState({})
 
   const {slug} = useParams()
