@@ -41,7 +41,10 @@ const NoteDetailPage = () => {
           <Link to={`/edit-note/${slug}`}>
           <button className="btn btn-primary"><FiEdit /><span>Edit</span></button>
           </Link>
-          <button className="btn btn-danger"><BiSolidTrashAlt /><span>Delete</span></button>
+
+          <button className="btn btn-danger"
+          onClick={handleIsOpen}
+          ><BiSolidTrashAlt /><span>Delete</span></button>
         </span>
         <p className="description">
           {note.body}
@@ -53,7 +56,7 @@ const NoteDetailPage = () => {
 
     </div>
 
-    {isOpen && <Modal/>}
+    {isOpen && <Modal handleIsOpen={handleIsOpen} />}
   </>
   )
 }
