@@ -69,7 +69,9 @@ function App() {
 
   const router = createBrowserRouter(createRoutesFromElements(
     <Route path="/" element={<MainLayout/>}>
-      <Route index element={<HomePage notes={notes} loading={isLoading} handleFilterText={handleFilterText} />} />
+      <Route index element={<HomePage
+      filterText={filterText}
+       notes={notes} loading={isLoading} handleFilterText={handleFilterText} />} />
       {/* <Route path="/add-note" element={<AddNotePage addNote={addNote} />} /> */}
       <Route path="/add-note" element={<AddNotePage addNote={addNote} />} />
       <Route path="/edit-note/:slug" element={<EditNotePage updateNote={updateNote} />} />
