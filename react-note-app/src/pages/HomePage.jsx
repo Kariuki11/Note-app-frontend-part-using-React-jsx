@@ -6,7 +6,7 @@ const HomePage = ({notes, loading, handleFilterText}) => {
   return (
     <>
     
-    <Filter handleFilterText={handleFilterText} />
+    {notes.length < 1 ? <h4 style={{textAlign: "center", marginTop: "17px"}}>No notes Found!</h4> :  <Filter handleFilterText={handleFilterText} />}
     <NoteCardContainer notes={notes} loading={loading}/>
     </>
   )

@@ -29,13 +29,24 @@ function App() {
     filterText === "BUSINESS" ? 
       notes.filter(note => note.category=="BUSINESS")
        : filterText === "PERSONAL" ? notes.filter(note => note.category=="PERSONAL")
-       : filterText === "IMPORTANT" ? notes.filter(note => note.category=="IMPORTANT") :notes
+       : filterText === "IMPORTANT" ? notes.filter(note => note.category=="IMPORTANT") 
+       : notes;
+
+       useEffect(() => {
+        if(searchText.length < 3) return;
+        axios.get(`http://127.0.0.1:8008/notes-search/?search=${searchText}`)
+        .then(res => {
+          console.log(res.data)
+          setNotes(res.data)
+        })
+        .catch(err => console.log(err.message))
+       }, [searchText])
 
   useEffect(() => {
     setIsLoading(true)
     axios.get("http://127.0.0.1:8008/notes/")
     .then(res => {
-      console.log(res.data)
+      //console.log(res.data)
       setNotes(res.data)
       setIsLoading(false)
     })
