@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function Filter() {
+const Filter = () => {
   return (
     <div className="container" style={{width: "500px", margin: "20px auto"}}>
         <select className="form-select" aria-label="Default select example" style={{height: "50px"}}>
@@ -12,3 +12,5 @@ export default function Filter() {
     </div>
   )
 }
+
+export default Filter

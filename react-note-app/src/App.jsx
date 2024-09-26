@@ -14,6 +14,11 @@ function App() {
 
   const [notes, setNotes] = useState([])
   const [isLoading, setIsLoading] = useState(false)
+  const [filterText, setFilterText] = useState("")
+
+  const handleFilterText = (val) => {
+    setFilterText(val)
+  }
 
   useEffect(() => {
     setIsLoading(true)
