@@ -20,7 +20,10 @@ function App() {
     setFilterText(val)
   }
 
-  const filteredNotes = filterText === "BUSINESS" ? notes.filter
+  const filteredNotes = 
+    filterText === "BUSINESS" ? 
+      notes.filter(note => note.category=="BUSINESS")
+       : notes;
 
   useEffect(() => {
     setIsLoading(true)
