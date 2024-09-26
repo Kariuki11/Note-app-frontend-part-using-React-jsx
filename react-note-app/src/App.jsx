@@ -41,6 +41,7 @@ function App() {
     })
   }
 
+
   const updateNote = (data, slug) => {
     axios.put(`http://127.0.0.1:8008/notes/${slug}/`, data)
     .then(res => {
@@ -52,6 +53,11 @@ function App() {
 
   }
 
+  const deleteNote = (slug) => {
+    axios.delete(`http://127.0.0.1.8008/notes/${slug}`)
+    .catch(err => console.log(err.message))
+  }
+
 
   const router = createBrowserRouter(createRoutesFromElements(
     <Route path="/" element={<MainLayout/>}>
@@ -59,7 +65,7 @@ function App() {
       {/* <Route path="/add-note" element={<AddNotePage addNote={addNote} />} /> */}
       <Route path="/add-note" element={<AddNotePage addNote={addNote} />} />
       <Route path="/edit-note/:slug" element={<EditNotePage updateNote={updateNote} />} />
-      <Route path="/notes/:slug" element={<NoteDetailPage />}/>
+      <Route path="/notes/:slug" element={<NoteDetailPage deleteNote={deleteNote} />}/>
     </Route>
   ))
 

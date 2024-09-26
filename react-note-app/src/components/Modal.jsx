@@ -1,7 +1,7 @@
 import React from 'react'
 import "./Modal.css"
 
-const Modal = ({handleIsOpen}) => {
+const Modal = ({handleIsOpen, deleteNote}) => {
   return (
     <div className="c-modal-overlay">
         <div className="c-modal">
