@@ -56,7 +56,7 @@ const NoteDetailPage = ({deleteNote}) => {
 
     </div>
 
-    {isOpen && <Modal handleIsOpen={handleIsOpen} deleteNote={deleteNote} />}
+    {isOpen && <Modal handleIsOpen={handleIsOpen} deleteNote={() => deleteNote(slug)} />}
   </>
   )
 }
