@@ -12,12 +12,17 @@ import { toast } from 'react-toastify';
 
 function App() {
 
-  const [notes, setNotes] = useState([])
-  const [isLoading, setIsLoading] = useState(false)
-  const [filterText, setFilterText] = useState("")
+  const [notes, setNotes] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+  const [searchText, setSearchText] = useState("");
+  const [filterText, setFilterText] = useState("");
 
   const handleFilterText = (val) => {
     setFilterText(val)
+  };
+
+  const handleSearchText = (val) => {
+    setSearchText(val)
   }
 
   const filteredNotes = 
@@ -74,7 +79,7 @@ function App() {
 
 
   const router = createBrowserRouter(createRoutesFromElements(
-    <Route path="/" element={<MainLayout/>}>
+    <Route path="/" element={<MainLayout searchText={searchText} handleSearchText={handleSearchText} />}>
       <Route index element={<HomePage notes={filteredNotes} loading={isLoading} handleFilterText={handleFilterText} />} />
       <Route path="/add-note" element={<AddNotePage addNote={addNote} />} />
       <Route path="/edit-note/:slug" element={<EditNotePage updateNote={updateNote} />} />

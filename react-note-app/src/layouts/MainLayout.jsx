@@ -6,10 +6,10 @@ import 'react-toastify/dist/ReactToastify.css'
 
 
 
-function MainLayout() {
+function MainLayout({searchText, handleSearchText}) {
   return (
     <>
-    <NavBar />
+    <NavBar searchText={searchText} handleSearchText={handleSearchText} />
     <ToastContainer />
     <Outlet />
     </>
