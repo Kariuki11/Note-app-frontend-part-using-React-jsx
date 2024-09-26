@@ -1,1 +1,0 @@
-3 hours 50 minutes 44 seconds

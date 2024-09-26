@@ -1,9 +1,14 @@
 import React from 'react'
 import "./Modal.css"
+import { useNavigate } from 'react-router-dom'
+import { toast } from 'react-toastify'
 
 const Modal = ({handleIsOpen, deleteNote}) => {
+  const navigate = useNavigate();
   const handleDeleteNote = () => {
     deleteNote()
+    navigate("/")
+    toast.success("Notes Deleted Successfully!")
   }
 
   return (
