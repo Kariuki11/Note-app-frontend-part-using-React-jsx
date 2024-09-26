@@ -23,7 +23,8 @@ function App() {
   const filteredNotes = 
     filterText === "BUSINESS" ? 
       notes.filter(note => note.category=="BUSINESS")
-       : notes;
+       : filterText === "PERSONAL" ? notes.filter(note => note.category=="PERSONAL")
+       : filterText === "IMPORTANT" ? notes.filter(note => note.category=="IMPORTANT") :notes
 
   useEffect(() => {
     setIsLoading(true)
@@ -74,8 +75,7 @@ function App() {
 
   const router = createBrowserRouter(createRoutesFromElements(
     <Route path="/" element={<MainLayout/>}>
-      <Route index element={<HomePage notes={notes} loading={isLoading} handleFilterText={handleFilterText} />} />
-      {/* <Route path="/add-note" element={<AddNotePage addNote={addNote} />} /> */}
+      <Route index element={<HomePage notes={filteredNotes} loading={isLoading} handleFilterText={handleFilterText} />} />
       <Route path="/add-note" element={<AddNotePage addNote={addNote} />} />
       <Route path="/edit-note/:slug" element={<EditNotePage updateNote={updateNote} />} />
       <Route path="/notes/:slug" element={<NoteDetailPage deleteNote={deleteNote} />}/>

@@ -9,7 +9,7 @@ const Filter = ({handleFilterText}) => {
           style={{height: "50px"}}
           onChange={(e) => handleFilterText(e.target.value)}
           >
-            <option selected>Filter Notes</option>
+            <option selected>All Notes</option>
             <option value="BUSINESS">Business</option>
             <option value="PERSONAL">Personal</option>
             <option value="IMPORTANT">Important</option>
