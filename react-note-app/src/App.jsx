@@ -55,6 +55,9 @@ function App() {
 
   const deleteNote = (slug) => {
     axios.delete(`http://127.0.0.1.8008/notes/${slug}`)
+    .then(res => {
+      setNotes([...notes])
+    })
     .catch(err => console.log(err.message))
   }
 
