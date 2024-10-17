@@ -4,7 +4,7 @@ import { Link } from "react-router-dom"
 
 function NavBar({searchText, handleSearchText}) {
   return (
-    <nav className="navbar bg-body-tertiary py-50" style={{ padding: "20px" }}>
+    <nav className="navbar bg-body-tertiary py-50" style={{ padding: "30px" }}>
       <div className="container d-flex justify-content-around">
         <Link className="navbar-brand" to="/">
           <h4 style={{ fontWeight: "bold" }}>Plain Pad</h4>
@@ -26,7 +26,6 @@ function NavBar({searchText, handleSearchText}) {
               Search
             </button>
           </div>
-          {/* <button className="btn btn-outline-primary btn-md" type="button">Add</button> */}
         </div>
 
         <Link to="/add-note"  style={{ textDecoration: "none" }}>
@@ -44,3 +43,6 @@ function NavBar({searchText, handleSearchText}) {
 }
 
 export default NavBar
+
+
+
