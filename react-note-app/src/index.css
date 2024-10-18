@@ -4,7 +4,7 @@
 
 
 body {
-  background: #edf1f5;
+  background: lawngreen;
   font-family: "Ubuntu", sans-serif;
   font-weight: 400;
   font-style: normal;
@@ -15,7 +15,7 @@ body {
   flex-direction: column;
   min-width: 0;
   word-wrap: break-word;
-  background-color: #fff;
+  background-color: white;
   background-clip: border-box;
   border: 0 solid transparent;
   border-radius: 0;
