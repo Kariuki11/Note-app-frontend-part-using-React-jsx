@@ -1,25 +1,3 @@
+This is a Notepad app created with a decoupled architecture, featuring a Django backend and a React.js frontend. The backend, built using Django REST Framework (DRF), handles the server-side logic, including user authentication and CRUD operations for notes. Data is stored in a database defined by Django models, while APIs expose endpoints for creating, reading, updating, and deleting notes. The backend ensures secure and efficient management of data, enabling seamless interaction between the client and server.
 
-
-Welcome to Notepad App, a simple and efficient text editing application designed for quick note-taking. This app offers a clean interface for creating, editing, and saving text documents effortlessly.
-
-Features
-Create Notes: Start new notes from scratch and write your thoughts or ideas.
-Edit Notes: Make changes to your notes and save them easily.
-Save Notes: Save notes as text files (.txt) on your local device.
-Dark/Light Mode: Switch between dark and light themes for better readability.
-Search Functionality: Find specific text within your notes.
-Undo/Redo: Effortlessly undo and redo actions while editing.
-Technologies Used
-Frontend: HTML, CSS, JavaScript
-Database: (if applicable) MongoDB, Firebase, etc.
-Version Control: Git
-Getting Started
-Prerequisites
-Ensure you have the following installed before running the app:
-
-
-A modern web browser (e.g., Google Chrome, Firefox, etc.)
-Incase of any inquires please contact  us on 
-
-@john karenju
-phone: +254742199073
+The frontend, developed with React.js, provides an interactive and responsive user interface. Axios is used to facilitate communication with the backend by making HTTP requests to the API endpoints. For instance, users can create a new note, which sends a POST request, or fetch all notes with a GET request. The application dynamically updates the UI based on user actions, delivering a smooth user experience. This architecture separates concerns, making the app scalable, maintainable, and adaptable to future enhancements.
